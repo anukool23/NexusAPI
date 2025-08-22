@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NexusAPI</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        body,html {
+            width: 650px;
+            height:700px;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NexusAPI</h1>
+        </div>
+        <label>URL</label>
+        <input type="text" id="url" placeholder="https://api.nexus.com/v1/">
+
+        <div class="row">
+            <label>Method</label>
+            <select id="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="PATCH">PATCH</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+            <button id="send">Send</button>
+        </div>
+
+        <div class="headers">
+            <label>Headers (one per line, `Key ; Value`)</label>
+            <textArea
+                    id="headers"
+                    rows="3"
+                    placeholder="Content-Type:application/json"
+            ></textArea>
+        </div>
+
+        <div class="body">
+            <label>Body (raw)</label>
+            <textarea
+                    id="body"
+                    rows="6"
+                    placeholder='{"name": "John"}'
+            ></textarea>
+        </div>
+
+        <div class="meta">
+            <div id="status">Response Status: -</div>
+            <div id="time">Response Time: -</div>
+        </div>
+
+        <div class="response">
+            <h2>Response</h2>
+            <pre id="respBody">-</pre>
+        </div>
+
+        <div class="response-headers">
+            <h3>Response Headers</h3>
+            <pre id="respHeaders">-</pre>
+        </div>
+
+        <div class="history">
+            <h3>History</h3>
+            <ul id="historyList"></ul>
+            <div class="history-btn">
+            <button id="clearHistory">Clear</button>
+                </div >
+        </div>
+
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
