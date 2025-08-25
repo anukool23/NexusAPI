@@ -77,3 +77,20 @@ pre{
 .history-btn{
     text-align: center;
 }
+
+.curl-class {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 98%;
+    margin-right: 10px;
+}
+
+.curl{
+    flex: 4;
+}
+
+.generate{
+    flex: 1;
+}
